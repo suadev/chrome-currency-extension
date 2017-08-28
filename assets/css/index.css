@@ -1,18 +1,15 @@
-.main{
+.main {
     padding: 5% 10% 5% 10%;
 }
-
-.container{
-    background-color: #f3f1f1;
+.container {
+    background-color: #e5f3f5;
     border-radius: 10px;
     padding: 10px;
 }
-
-.header{
+.header {
     margin-bottom: 50px;
 }
-
-.currency-item{
+.currency-item {
     border: 1px solid;
     border-radius: 5px;
     display: flow-root;
@@ -20,24 +17,25 @@
     width: 92px;
     margin: 5px;
     display: inline-block;
-    background-color: #DEEDF9;
+    background-color: #f7f7f7;
 }
-
-.currency-item:hover{
+.currency-item:hover {
     cursor: pointer;
     background-color: #B4D4EF;
 }
-
-.currency-name-p{
+.currency-name-p {
     font-size: 16px;
     margin: 0 !important;
-    font-weight: 600;    
+    font-weight: 600;
 }
-.currency-value-p{
+.currency-value-p {
     float: right;
     margin: 0 !important;
 }
-
-#date{
+#date {
     float: right;
+}
+.loader {
+    display: none;
+    margin-left: 50%;
 }

@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
-    "name": "Currency Rates",
-    "short_name": "Currency Rates",
+    "name": "Exchange Rates",
+    "short_name": "Exchange Rates",
     "description": "Replace the new tab with a list of currecy rates.",
     "version": "1.0",
     "permissions": [
@@ -9,19 +9,18 @@
       "storage",
       "webNavigation"
     ],
-    // "icons": {
-    //   "16": "assets/img/icon16.png",
-    //   "48": "assets/img/icon48.png",
-    //   "128": "assets/img/icon128.png"
-    // },
+    "icons": {
+      "16": "assets/img/icon16.png",
+      "48": "assets/img/icon48.png",
+      "128": "assets/img/icon128.png"
+    },
     "chrome_url_overrides": {
       "newtab": "index.html"
     },
     "homepage_url": "http://github.com/suadev",
-    // "options_page": "options.html",
     "browser_action": {
-      "default_title": "Currency Rates"
-      // "default_icon": "assets/img/icon128.png" 
+      "default_title": "Exchange Rates",
+      "default_icon": "assets/img/icon128.png" 
     }
   }
   

@@ -1,14 +1,12 @@
 function CurrencyTab() {
     var apiUrl = "http://api.fixer.io/latest?",
-        resultKey = "currencyRates",
-        selectedCurrencyKey = "selectedCurrency"
+        selectedCurrencyKey = "selectedCurrency",
         baseCurrencySelector = "#base-currency",
         dateSelector = "#date",
-        ratesSelector  =".rates",
-        dataItemTemplate = '<div class="currency-item">' +
-        '<p class="currency-name-p">$key</p>' +
-        '<p class="currency-value-p">$value</p>' +
-        '</div>'
+        ratesSelector = ".rates",
+        currencyItemSelector = ".currency-item",
+        loaderSelector = ".loader",
+        dataItemTemplate = '<div class="currency-item"><p class="currency-name-p">$key</p><p class="currency-value-p">$value</p></div>';
 
     var storage = new Storage();
 
@@ -16,12 +14,19 @@ function CurrencyTab() {
         var defaultBaseCurrency = storage.getStorage().getItem(selectedCurrencyKey);
         var baseCurrency = defaultBaseCurrency == null ? "USD" : defaultBaseCurrency;
         $(baseCurrencySelector).val(baseCurrency);
-        $(dateSelector).val("2017-08-27");
 
-        $(document).bind("change", function () {
-            storage.getStorage().setItem(selectedCurrencyKey, $(baseCurrencySelector).val());
-            getCurrencyRates();
+        $("#date").datepicker().datepicker("setDate", new Date());
+        $("#base-currency").selectmenu({
+            change: refreshData
         });
+        $("#date").bind("change", function () {
+            refreshData();
+        });
+    }
+
+    var refreshData = function(){
+        storage.getStorage().setItem(selectedCurrencyKey, $(baseCurrencySelector).val());
+        getCurrencyRates();
     }
 
     var getCurrencyRates = function () {
@@ -31,17 +36,18 @@ function CurrencyTab() {
         $.ajax({
             url: url,
             method: 'get',
+            beforeSend: function () {
+                $(loaderSelector).show();
+            },
             success: function (data) {
-                // $('.rates').find('pre').text(JSON.stringify(data.rates, null, 1));
-                $('.currency-item').remove();
+                $(currencyItemSelector).remove();
                 createCurrencyItems(data.rates);
             },
             error: function (xhr, status, error) {
                 console.log(error);
             },
             complete: function () {
-                // save result to localstorage
-                // storage.setItem(resultKey, )
+                $(loaderSelector).hide();
             }
         });
     }
