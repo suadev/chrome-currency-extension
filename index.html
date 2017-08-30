@@ -1,22 +1,17 @@
-<htnl>
+<html>
 
-    <head>
-        <meta charset=UTF-8>
-        <title>Currency Rates</title>
-        <link rel=stylesheet href=assets/css/index.css>
-        <link rel=stylesheet href=assets/css/jquery-ui.css>
-        <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-    </head>
+<head>
+    <meta charset=UTF-8>
+    <title>Exchange Rates</title>
+    <link rel=stylesheet href=assets/css/index.css>
+    <link rel=stylesheet href=assets/css/jquery-ui.css>
+</head>
 
-    <body>
-
-        <div class="main">
-
-            <div class="container">
-
-                <div class="header">
-
-                    <label for="base-currency"><strong>Base Currency =></strong>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="header">
+                <label for="base-currency"><strong>Base Currency =></strong>
                     <select name="base-currency" id="base-currency">
                         <option value="AUD">AUD</option>
                         <option value="BGN">BGN</option>
@@ -52,33 +47,21 @@
                         <option value="ZAR">ZAR</option>
                     </select>
                 </label>
-
                 <input type="text" id="date" />
-
-                </div>
-
-                <div class="content">
-                    <div class="loader">
-                        <img src="assets/img/loader.gif" />
-                    </div>
-
-                    <div class="rates">
-                        <!-- <pre>
-                            
-                        </pre> -->
-                    </div>
-
-                </div>
-
             </div>
-
+            <div class="content">
+                <div class="loader">
+                    <img src="assets/img/loader.gif" />
+                </div>
+                <div class="rates">
+                </div>
+            </div>
         </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/index.js"></script>
+</body>
 
-
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery-ui.js"></script>
-        <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
-        <script src="assets/js/storage.js"></script>
-        <script src="assets/js/index.js"></script>
-    </body>
-</htnl>
+</html>

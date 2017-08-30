@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Exchange Rates",
     "short_name": "Exchange Rates",
-    "description": "Replace the new tab with a list of currecy rates.",
+    "description": "Replace the new tab with a list of exchange rates.",
     "version": "1.0",
     "permissions": [
       "tabs",

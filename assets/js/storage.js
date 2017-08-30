@@ -1,5 +1,4 @@
 function Storage() {
-
     var getStorage = function () {
         if (window.localStorage) {
             return window.localStorage;
@@ -9,7 +8,6 @@ function Storage() {
             getItem: function () {}
         }
     };
-
     return {
         getStorage: function () {
             return getStorage();
